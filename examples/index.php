@@ -24,13 +24,16 @@ use SteamWebApi\SteamWebApi;
 
 $steamWebApi = new SteamWebApi(null);
 
+// SteamID is not correct, please change it!
+
 // Converts SteamId to Steam64Id, SteamId and SteamId3
-$steamId = $steamWebApi->getSteamId('76561199146708568');
+$steamId = $steamWebApi->getSteamId('7656119914XXXX');
 
 // Get Inventory with SteamId
-//$inventory = $steamWebApi->getInventory('76561199146708568');
+//$inventory = $steamWebApi->getInventory('76561199XXX');
 
 // Get Profile with SteamId
-//$profile = $steamWebApi->getProfile('HoshinoYuki');
+//$profile = $steamWebApi->getProfile('HoshinoXXXXX');
 
+$inventoryWorth = $steamWebApi->getInventoryWorth('76561199146XXXX');
 dd($steamId);

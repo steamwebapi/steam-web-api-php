@@ -81,4 +81,29 @@ class SteamWebApi
         return json_decode($request->getBody()->getContents(), true);
     }
 
+
+    public function getInventoryWorth(string $steamId, string $game = 'csgo', string $language = 'english', bool $parse = true): array
+    {
+        $request = $this->client->request('GET', 'inventory', [
+            'query' => [
+                'steam_id' => $steamId,
+                'game' => $game,
+                'language' => $language,
+                'parse' => $parse,
+                'key' => $this->apiKey,
+            ],
+            'timeout' => 120,
+        ]);
+
+
+        // Inventorylist
+        //$request->getBody()->getContents();
+        $toArray = json_decode($request->getBody()->getContents(), true);
+
+        $worthInDollar = array_sum(array_column($toArray, 'priceAvg'));
+
+
+        return ['worthInDollar' => number_format($worthInDollar, 2), 'inventory' => $toArray];
+    }
+
 }

@@ -1,0 +1,22 @@
+{
+    "name": "steamwebapi/php-steam-api",
+    "description": "Steamwebapi PHP Package for CS:GO, RUST, DOTA - Inventory, Profile, SteamID API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steamwebapi",
+            "homepage": "https://www.steamwebapi.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "SteamWebApi\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "ext-json": "*"
+    }
+}
